@@ -7,7 +7,13 @@ const RocketLauncher = (props) => {
     const countdown = () => console.log(counter -= 1)
     console.log('Rocket launcher mounted')
     let interval = setInterval(countdown, 1000)
+  
+    return () => {
+      console.log("Rocket launcher unmounted")
+      clearInterval(interval)
+    }
   })
+
 
   return (
     <p>Rocket launcher is counting down</p>
